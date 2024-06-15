@@ -1,26 +1,205 @@
+/* General body settings */
 body {
-    height: 100%;
-    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
 }
 
-.header, .footer {
-    background-color: #343a40;
-    color: white;
+/* Logo size settings */
+header .logo {
+    width: 50px;
+    height: auto;
 }
 
-.header h1 {
-    margin: 0;
+/* Header and footer background and padding */
+header {
+    padding: 10px 0;
+    background-color: #3b2f2f;
 }
 
-.main-content, .featured-section {
+footer {
     padding: 20px 0;
+    background-color: #3b2f2f;
+    color: white;
+    text-align: center;
+    position: relative;
+    bottom: 0;
+    width: 100%;
 }
 
-.content-box, .featured-item {
-    background-color: #f8f9fa;
-    border: 1px solid #dee2e6;
-    padding: 15px;
-    margin: 10px 0;
-    border-radius: 5px;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+/* Container border radius */
+.container {
+    border-radius: 8px;
+}
+
+/* First container background and padding */
+.first-container {
+    background-color: #6f4e37;
+    flex: 1;
+    padding: 50px 0;
+    margin-bottom: 50px;
+}
+
+/* Second container background and padding */
+.second-container {
+    background-color: #8d6e63;
+    flex: 1;
+    padding: 50px 0;
+}
+
+/* Title styling with typing animation */
+h2 {
+    font-weight: bold;
+    font-family: "Avant Garde", Avantgarde, "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
+    overflow: hidden; 
+    white-space: nowrap; 
+    animation: typing 2s steps(40) infinite, blink-caret 0.75s infinite;
+}
+
+/* Keyframes for typing animation */
+@keyframes typing {
+    from {
+      width: 0;
+    }
+    to {
+        width: var(--typing-width, 40%);
+    }
+}
+
+/* Keyframes for blinking cursor */
+@keyframes blink-caret {
+    from, to {
+        border-color: transparent;
+    }
+    50% {
+        border-color: #ffab40;
+    }
+}
+
+/* Image styling */
+img {
+    border-radius: 8px;
+    width: 100%;
+}
+
+/* Fixed size for images */
+.fixed-size {
+    width: 100%;
+    height: 352px;
+    object-fit: cover;
+}
+
+/* Image container settings */
+.image-container {
+    position: relative;
+    width: 100%;
+    padding-bottom: 75%;
+    overflow: hidden;
+}
+
+/* Image container inner settings */
+.image-container img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Carousel padding and background */
+.padding-content {
+    padding: 30px;
+    background-color: #ffffff;
+    border-radius: 8px;
+}
+
+/* Hover effects for images */
+.image-container img:hover {
+    transform: scale(1.1);
+    transition: transform 0.3s ease-in-out;
+}
+
+/* Hover effects for navigation links */
+.nav-link:hover {
+    color: #ffab40 !important;
+}
+
+ footer{
+    position: fixed;
+ }  
+
+/* Responsiveness for smaller screens */
+@media (max-width: 768px) {
+    .navbar-brand img {
+        width: 40px;
+    }
+    h2 {
+        font-size: 1.5rem;
+    }
+    #employeeCarousel .carousel-inner .carousel-item img {
+        height: 350px;
+        object-fit: cover;
+    }
+}
+
+/* Responsiveness for very small screens */
+@media (max-width: 576px) {
+    h2 {
+        font-size: 1.25rem;
+    }
+    p {
+        font-size: 0.875rem;
+    }
+    footer p {
+        font-size: 0.75rem;       
+    }
+}
+
+/* General media query for medium and larger screens */
+@media (min-width: 769px) {
+    /* Adjust carousel item height */
+    .first-carousel .carousel-inner .carousel-item img {
+        height: 352px;
+        object-fit: cover;
+    }
+    #employeeCarousel .carousel-inner .carousel-item img {
+        height: 352px;
+        object-fit: cover;
+    }
+}
+
+/* General media query for large screens */
+@media (min-width: 1200px) {
+    /* Adjust carousel item height */
+    .first-carousel .carousel-inner .carousel-item img {
+        height: 400px;
+        object-fit: cover;
+    }
+    #employeeCarousel .carousel-inner .carousel-item img {
+        height: 400px;
+        object-fit: cover;
+    }
+}
+
+/* Adjust columns for specific screen sizes */
+@media (min-width: 992px) and (max-width: 1199px) {
+    .first-carousel .carousel-inner .carousel-item img {
+        height: 317px;
+        object-fit: cover;
+    }
+}
+
+@media (min-width: 452px) and (max-width: 991px) {
+    .first-carousel .carousel-inner .carousel-item img {
+        height: 375px;
+        object-fit: cover;
+    }
+}
+
+@media (min-width: 766px) and (max-width: 1488px) {
+    #employeeCarousel .carousel-inner .carousel-item .row .col-md-4,
+    #employeeCarousel .carousel-inner .carousel-item .row .col-md-8 {
+        flex: 0 0 50%;
+        max-width: 50%;
+    }
 }
