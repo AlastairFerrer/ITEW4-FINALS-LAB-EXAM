@@ -1,7 +1,7 @@
 /* General body settings */
 body {
     font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
+    background-color: #ffffff;
 }
 
 /* Logo size settings */
@@ -11,19 +11,9 @@ header .logo {
 }
 
 /* Header and footer background and padding */
-header {
+header, footer {
     padding: 10px 0;
-    background-color: #3b2f2f;
-}
-
-footer {
-    padding: 20px 0;
-    background-color: #3b2f2f;
-    color: white;
-    text-align: center;
-    position: relative;
-    bottom: 0;
-    width: 100%;
+    background-color: #2b0f04;
 }
 
 /* Container border radius */
@@ -33,7 +23,7 @@ footer {
 
 /* First container background and padding */
 .first-container {
-    background-color: #6f4e37;
+    background-color: #f0e2c7;
     flex: 1;
     padding: 50px 0;
     margin-bottom: 50px;
@@ -41,27 +31,32 @@ footer {
 
 /* Second container background and padding */
 .second-container {
-    background-color: #8d6e63;
+    background-color: #f0e2c7;
     flex: 1;
     padding: 50px 0;
 }
 
-/* Title styling with typing animation */
+/* Title styling */
 h2 {
     font-weight: bold;
     font-family: "Avant Garde", Avantgarde, "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
+}
+.title-heading {
     overflow: hidden; 
     white-space: nowrap; 
-    animation: typing 2s steps(40) infinite, blink-caret 0.75s infinite;
+    animation: typing 5s steps(40) infinite, blink-caret 0.75s infinite;
 }
 
-/* Keyframes for typing animation */
+/* Keyframes for typing animation with a 3-second pause */
 @keyframes typing {
-    from {
-      width: 0;
+    0% {
+        width: 0;
     }
-    to {
-        width: var(--typing-width, 40%);
+    50% {
+        width: var(--typing-width, 100%);
+    }
+    100% {
+        width: var(--typing-width, 100%);
     }
 }
 
@@ -74,6 +69,7 @@ h2 {
         border-color: #ffab40;
     }
 }
+
 
 /* Image styling */
 img {
@@ -124,10 +120,6 @@ img {
     color: #ffab40 !important;
 }
 
- footer{
-    position: fixed;
- }  
-
 /* Responsiveness for smaller screens */
 @media (max-width: 768px) {
     .navbar-brand img {
@@ -151,37 +143,11 @@ img {
         font-size: 0.875rem;
     }
     footer p {
-        font-size: 0.75rem;       
+        font-size: 0.75rem;
     }
 }
 
-/* General media query for medium and larger screens */
-@media (min-width: 769px) {
-    /* Adjust carousel item height */
-    .first-carousel .carousel-inner .carousel-item img {
-        height: 352px;
-        object-fit: cover;
-    }
-    #employeeCarousel .carousel-inner .carousel-item img {
-        height: 352px;
-        object-fit: cover;
-    }
-}
-
-/* General media query for large screens */
-@media (min-width: 1200px) {
-    /* Adjust carousel item height */
-    .first-carousel .carousel-inner .carousel-item img {
-        height: 400px;
-        object-fit: cover;
-    }
-    #employeeCarousel .carousel-inner .carousel-item img {
-        height: 400px;
-        object-fit: cover;
-    }
-}
-
-/* Adjust columns for specific screen sizes */
+/* Responsiveness for medium screens */
 @media (min-width: 992px) and (max-width: 1199px) {
     .first-carousel .carousel-inner .carousel-item img {
         height: 317px;
@@ -189,6 +155,7 @@ img {
     }
 }
 
+/* Responsiveness for small to medium screens */
 @media (min-width: 452px) and (max-width: 991px) {
     .first-carousel .carousel-inner .carousel-item img {
         height: 375px;
@@ -196,6 +163,7 @@ img {
     }
 }
 
+/* Responsiveness for medium to large screens */
 @media (min-width: 766px) and (max-width: 1488px) {
     #employeeCarousel .carousel-inner .carousel-item .row .col-md-4,
     #employeeCarousel .carousel-inner .carousel-item .row .col-md-8 {
